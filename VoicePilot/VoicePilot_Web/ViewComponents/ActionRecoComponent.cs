@@ -16,12 +16,12 @@ namespace VoicePilot_Web.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync(string input)
         {
-            await _actionRecoResponse.GetAsync("ActionReco",
+            var result = await _actionRecoResponse.GetAsync("ActionReco",
                 new Dictionary<string, string>()
                 {
                     { "input", input}
                 });
-            return View();
+            return View(result);
         }
     }
 }

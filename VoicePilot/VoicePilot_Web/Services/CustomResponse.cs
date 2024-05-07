@@ -31,7 +31,24 @@ namespace VoicePilot.Services
         }
 
         // Method to handle the GetAsync request
-        public async Task GetAsync(string whatAbout, Dictionary<string, string> variablesContext)
+        public async Task<FunctionResult> GetAsync(string whatAbout, Dictionary<string, string> variablesContext)
+        {
+            var arguments = new KernelArguments();
+
+            foreach (var item in variablesContext)
+            {
+                arguments[item.Key] = item.Value;
+            }
+
+            var result = await _kernel.InvokeAsync(_kernel.Plugins[this.PluginName][this.FunctionName], arguments);
+
+            Console.Write(result);
+            return result;
+
+
+        }
+
+        public async Task GetStreamingAsync(string whatAbout, Dictionary<string, string> variablesContext)
         {
             var arguments = new KernelArguments();
 

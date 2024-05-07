@@ -18,9 +18,10 @@ namespace VoicePilot_Web.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult GetActionReco(string input)
         {
-            input = "va sur la zone 4";
+            input = "Please go to the Zone5";
             this._logger.LogDebug("Action reco receive request.");
             return ViewComponent("ActionRecoComponent", new { input = input });
         }

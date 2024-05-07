@@ -29,8 +29,8 @@ body {
 }
 
 #zone1 {
-    top: 0;
-    left: 0;
+    top: 50px;
+    left: 50px;
 }
 
 #zone2 {
@@ -66,7 +66,7 @@ body {
 }
 #bot {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 50px;
+    left: 50px;
     transition: all 5s ease-in-out;
 }
