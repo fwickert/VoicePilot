@@ -1,0 +1,23 @@
+﻿<div id="container">
+    <button id="bt1" type="button">Move to Zone 1</button>
+    <button id="bt2" type="button">Move to Zone 2</button>
+    <button id="bt3" type="button">Move to Zone 3</button>
+    <button id="bt4" type="button">Move to Zone 4</button>
+    <button id="bt5" type="button">Move to Zone 5</button>
+    <img id="bot" src="assets/botB.svg" alt="bot" />
+
+
+    <div id="zone1" class="zone">zone1</div>
+    <div id="zone2" class="zone"></div>
+    <div id="zone3" class="zone"></div>
+    <div id="zone4" class="zone"></div>
+    <div id="zone5" class="zone">zone5</div>
+</div>
+<script>
+    var buttons = document.querySelectorAll('button');
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            moveBot(button.id);
+        });
+    });
+</script>
